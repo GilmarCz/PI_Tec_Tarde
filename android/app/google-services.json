@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1033707395241",
+    "project_id": "foodybite-35e6a",
+    "storage_bucket": "foodybite-35e6a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1033707395241:android:91e41d2c215f883c8931b8",
+        "android_client_info": {
+          "package_name": "com.example.foodybite"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBL-WZgzwojZLaiOqS0wZaUm7ZrnHvEEEU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
