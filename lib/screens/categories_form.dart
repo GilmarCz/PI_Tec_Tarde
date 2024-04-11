@@ -12,9 +12,10 @@ class CategoryForm extends StatefulWidget {
 class _CategoryFormState extends State<CategoryForm> {
   final _formKey = GlobalKey<FormState>();
   final _nameController = TextEditingController();
-  //final _color1Controller = TextEditingController();
-  //final _color2Controller = TextEditingController();
   final _imgController = TextEditingController();
+
+  static const Color _color1 = Color.fromARGB(100, 0, 0, 0);
+  static const Color _color2 = Color.fromARGB(100, 0, 0, 0);
 
   @override
   Widget build(BuildContext context) {
@@ -37,26 +38,6 @@ class _CategoryFormState extends State<CategoryForm> {
                   return null;
                 },
               ),
-              // TextFormField(
-              //   controller: _color1Controller,
-              //   decoration: InputDecoration(labelText: 'Cor 1'),
-              //   validator: (value) {
-              //     if (value == null || value.isEmpty) {
-              //       return 'Por favor, insira a primeira cor';
-              //     }
-              //     return null;
-              //   },
-              // ),
-              // TextFormField(
-              //   controller: _color2Controller,
-              //   decoration: InputDecoration(labelText: 'Cor 2'),
-              //   validator: (value) {
-              //     if (value == null || value.isEmpty) {
-              //       return 'Por favor, insira a segunda cor';
-              //     }
-              //     return null;
-              //   },
-              // ),
               TextFormField(
                 controller: _imgController,
                 decoration: InputDecoration(labelText: 'Imagem'),
@@ -75,11 +56,11 @@ class _CategoryFormState extends State<CategoryForm> {
                       if (_formKey.currentState!.validate()) {
                         final category = {
                           'name': _nameController.text,
-                          // 'color1': _color1Controller.text,
-                          // 'color2': _color2Controller.text,
+                          'color1': _color1,
+                          'color2': _color2,
                           'img': _imgController.text,
                         };
-                        print('Category data: $category');
+                        print('Dados da Categoria: $category');
                         // Adicione sua lógica para salvar ou atualizar os dados da categoria
                       }
                     },
@@ -90,8 +71,6 @@ class _CategoryFormState extends State<CategoryForm> {
                   ),
                 ),
               ),
-
-
             ],
           ),
         ),
