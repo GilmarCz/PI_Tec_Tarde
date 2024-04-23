@@ -3,7 +3,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:foodybite/screens/restaurant_form.dart';
 import 'dart:convert';
-import 'dart:html' as html;
+//import 'dart:html' as html;
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'dart:io';
 import 'package:path/path.dart';
@@ -39,7 +40,9 @@ class DatabaseHelper {
     if (kIsWeb) {
       return 'web'; // Just a placeholder; you can adjust this as needed
     } else {
-      return html.window.localStorage['applicationDocumentsDirectory'] ?? '';
+      // Use a biblioteca path_provider para obter o diretório de documentos do aplicativo
+      Directory appDocDir = (await getApplicationDocumentsDirectory()) as Directory;
+      return appDocDir.path;
     }
   }
 
